@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#173249</color>
+    <color name="colorAccent">#757575</color>
+
+    <!-- background colors -->
+    <color name="center_wall">#2E475D</color>
+    <color name="bottom_floor">#173249</color>
+
+    <!-- font colors-->
+    <color name="white_gray">#FAFAFA</color>
+    <color name="thicker_white_gray">#E0E0E0</color>
+
+    <color name="smooth_black">#212121</color>
+    <color name="white">#FFFFFF</color>
+    <color name="rust_gray">#757575</color>
+    <color name="blue_gray">#607D8B</color>
+
+    <color name="chat_gray">#909CA8</color>
+</resources>

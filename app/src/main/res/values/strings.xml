@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AIChatProject</string>
+    <string name="login_title">BINE AI VENIT!</string>
+    <string name="login_title_min">Eu sunt Dr. Dre, ne cunoastem?</string>
+    <string name="login_user_hint">Utilizator</string>
+    <string name="login_password_hint">Parola</string>
+    <string name="login_signin_button">Hai sa invatam!</string>
+    <string name="login_forgot_password">Am uitat parola</string>
+    <string name="login_auth_text">Autentificare</string>
+    <string name="login_write_message">Scrie un mesaj…</string>
+    <string name="login_username_error">Username must not be empty!</string>
+    <string name="login_password_error">Password must not be empty!</string>
+</resources>
