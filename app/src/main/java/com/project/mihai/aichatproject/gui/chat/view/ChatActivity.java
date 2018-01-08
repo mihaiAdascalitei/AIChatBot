@@ -59,7 +59,7 @@ public class ChatActivity extends AppCompatActivity implements ChatView {
 
 
     private void initAdapters() {
-        adapter = new ChatBotAdapter(data);
+        adapter = new ChatBotAdapter(this, data);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
