@@ -8,4 +8,5 @@ public interface ChatView {
     void onAdapterViewUpdate();
 
     void onClearChatMessage();
+
 }

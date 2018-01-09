@@ -17,9 +17,14 @@ public class ChatAdapterClickImplementation implements ChatAdapterClickPresenter
     public void onMicrophoneClick(String message, int type) {
         if (type == 2) {
             if (view != null) {
-                view.speak(message);
+                if (view.isSpeaking()) {
+                    view.muteMicrophone();
+                } else {
+                    view.speak(message);
+                }
             }
         }
 
     }
+
 }

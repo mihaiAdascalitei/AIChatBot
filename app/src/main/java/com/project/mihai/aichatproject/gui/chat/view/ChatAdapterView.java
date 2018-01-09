@@ -8,4 +8,10 @@ import android.speech.tts.TextToSpeech;
 
 public interface ChatAdapterView {
     void speak(String message);
+
+    void muteMicrophone();
+
+    boolean isSpeaking();
+
+
 }

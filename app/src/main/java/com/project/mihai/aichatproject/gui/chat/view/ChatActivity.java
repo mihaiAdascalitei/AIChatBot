@@ -81,4 +81,11 @@ public class ChatActivity extends AppCompatActivity implements ChatView {
     public void onClearChatMessage() {
         etGetMessage.setText("");
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        adapter.onDestroyTextToSpeech();
+
+    }
 }
