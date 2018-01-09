@@ -38,7 +38,8 @@
             android:hint="@string/login_write_message"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:layout_toStartOf="@+id/iv_post_message" />
+            android:layout_toStartOf="@+id/iv_post_message"
+            android:textSize="20sp"/>
 
         <ImageView
             android:id="@+id/iv_post_message"

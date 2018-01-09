@@ -1,6 +1,7 @@
 package com.project.mihai.aichatproject.gui.adapters;
 
 import android.content.Context;
+import android.provider.MediaStore;
 import android.speech.tts.TextToSpeech;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
@@ -83,7 +84,7 @@ public class ChatBotAdapter extends RecyclerView.Adapter<ChatBotAdapter.ChatBotH
     }
 
 
-    public class ChatBotHolder extends RecyclerView.ViewHolder implements ChatAdapterView {
+    public class ChatBotHolder extends RecyclerView.ViewHolder implements ChatAdapterView, TextToSpeech.OnInitListener {
         @BindView(R.id.message)
         TextView message;
 
@@ -98,8 +99,7 @@ public class ChatBotAdapter extends RecyclerView.Adapter<ChatBotAdapter.ChatBotH
 
 
         private void initInstances() {
-            textToSpeech = new TextToSpeech(context, null);
-            textToSpeech.setLanguage(Locale.US);
+            textToSpeech = new TextToSpeech(context, this);
             presenter = new ChatAdapterClickImplementation(this);
 
         }
@@ -126,6 +126,14 @@ public class ChatBotAdapter extends RecyclerView.Adapter<ChatBotAdapter.ChatBotH
         @Override
         public boolean isSpeaking() {
             return textToSpeech.isSpeaking();
+
+        }
+
+        @Override
+        public void onInit(int i) {
+            //the closest to romanian
+            textToSpeech.setLanguage(new Locale("it"));
+
         }
     }
 
