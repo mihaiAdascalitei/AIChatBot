@@ -8,12 +8,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.project.mihai.aichatproject.R;
 import com.project.mihai.aichatproject.gui.adapters.ChatBotAdapter;
 import com.project.mihai.aichatproject.gui.chat.presenter.ChatPresenter;
 import com.project.mihai.aichatproject.gui.chat.presenter.ChatPresenterImplementation;
 import com.project.mihai.aichatproject.model.ChatMessageModel;
+import com.project.mihai.aichatproject.utils.ChatUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,7 +70,14 @@ public class ChatActivity extends AppCompatActivity implements ChatView {
 
     @OnClick(R.id.iv_post_message)
     public void postMessageClickAction() {
-        presenter.onPostMessage(etGetMessage.getText().toString().trim(), data);
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                presenter.onRequestMessage(etGetMessage.getText().toString().trim());
+                presenter.onPostMessage(etGetMessage.getText().toString().trim(), data, 1);
+            }
+        });
+
     }
 
     @Override
@@ -80,6 +89,16 @@ public class ChatActivity extends AppCompatActivity implements ChatView {
     @Override
     public void onClearChatMessage() {
         etGetMessage.setText("");
+    }
+
+    @Override
+    public void onPostMessageResponse(final String message) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                presenter.onPostMessage(message, data, 2);
+            }
+        });
     }
 
     @Override

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,6 +13,7 @@ import com.project.mihai.aichatproject.R;
 import com.project.mihai.aichatproject.gui.chat.view.ChatActivity;
 import com.project.mihai.aichatproject.gui.login.presenter.LoginPresenter;
 import com.project.mihai.aichatproject.gui.login.presenter.LoginPresenterImplementation;
+import com.project.mihai.aichatproject.gui.register.view.RegisterActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -57,6 +59,10 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
         presenter.login(etUsername.getText().toString(), etPassword.getText().toString());
     }
 
+    @OnClick(R.id.iv_button_add)
+    public void addButtonClickAction() {
+        startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+    }
 
     @Override
     public void setUsernameError() {

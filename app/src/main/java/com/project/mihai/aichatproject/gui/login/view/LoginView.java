@@ -6,6 +6,7 @@ package com.project.mihai.aichatproject.gui.login.view;
 
 public interface LoginView {
 
+
     void setUsernameError();
 
     void setPasswordError();

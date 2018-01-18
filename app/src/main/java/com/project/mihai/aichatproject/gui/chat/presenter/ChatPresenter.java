@@ -10,6 +10,8 @@ import java.util.List;
 
 public interface ChatPresenter {
 
-    void onPostMessage(String message, List<ChatMessageModel> data);
+    void onPostMessage(String message, List<ChatMessageModel> data, int type);
+
+    void onRequestMessage(String message);
 
 }
